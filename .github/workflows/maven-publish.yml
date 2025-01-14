@@ -30,7 +30,7 @@ jobs:
 
     # Step 4: Upload the built artifact to GitHub Actions Artifacts storage
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: my-artifact  # Name of the artifact you want to upload
         path: target/*.jar  # Path to the built artifact (adjust to your project build output)
