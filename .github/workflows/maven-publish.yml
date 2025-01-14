@@ -15,22 +15,22 @@ jobs:
     steps:
     # Step 1: Checkout the code from the repository
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-    # Step 2: Set up Java using Adoptium (instead of adoptopenjdk)
+    # Step 2: Set up JDK 11 using Adoptium (or Amazon Corretto)
     - name: Set up JDK 11
       uses: actions/setup-java@v2
       with:
-        java-version: '11'  # Change to your Java version if needed
-        distribution: 'temurin'  # Now use 'adoptium'
+        java-version: '11'
+        distribution: 'temurin'  # Use 'adoptium' or 'corretto' as required
 
-    # Step 3: Build the project using Maven (or any build tool you use)
+    # Step 3: Build the project using Maven
     - name: Build with Maven
       run: mvn clean install
 
-    # Step 4: Upload the built artifact to GitHub Actions Artifacts storage
+    # Step 4: Upload the built artifact (adjust path as needed)
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
-        name: my-artifact  # Name of the artifact you want to upload
-        path: target/*.jar  # Path to the built artifact (adjust to your project build output)
+        name: my-artifact  # Name of the artifact
+        path: target/*.jar  # Ensure this matches where your JAR is located
