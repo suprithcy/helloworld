@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'  # Change to your Java version if needed
-        distribution: 'adoptium'  # Now use 'adoptium'
+        distribution: 'temurin'  # Now use 'adoptium'
 
     # Step 3: Build the project using Maven (or any build tool you use)
     - name: Build with Maven
